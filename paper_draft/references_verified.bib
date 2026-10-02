@@ -1,0 +1,610 @@
+% references_verified.bib
+% Verification pass: 2026-10-02. "VERIFIED" = title/authors/date read from the arXiv abs page
+% (or the LessWrong post page) fetched on that date. Venue info is taken from the arXiv
+% "Comments"/"Journal-ref" field only; where arXiv listed no venue, the entry is left as an
+% arXiv preprint (the paper may nonetheless have a published version -- check before camera-ready).
+% Summaries paraphrase the abstract as fetched; numbers are from the abstracts.
+% Diacritics: arXiv shows "Florian Tramer", "Denny Vrandecic" unaccented; the accents in those two
+% entries (Tram{\`e}r, Vrande{\v{c}}i{\'c}) were added by hand and are not from the fetched page.
+
+% ============================================================================
+% PART 1 -- evaluation awareness / test awareness
+% ============================================================================
+
+% VERIFIED (arXiv:2505.23836). 1,000-prompt benchmark over 61 datasets; frontier models classify
+% evaluation vs. deployment transcripts well above chance (Gemini-2.5-Pro AUC 0.83 vs. human 0.92), better in agentic than chat settings.
+@article{needham2025eval,
+  title   = {Large Language Models Often Know When They Are Being Evaluated},
+  author  = {Needham, Joe and Edkins, Giles and Pimpale, Govind and Bartsch, Henning and Hobbhahn, Marius},
+  journal = {arXiv preprint arXiv:2505.23836},
+  year    = {2025},
+  eprint  = {2505.23836},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2505.23836}
+}
+
+% VERIFIED (arXiv:2505.14617; arXiv comment: NeurIPS 2025 Spotlight). White-box probing finds linear "test awareness"
+% activations in open-weight reasoning LLMs; steering toward/away from awareness changes compliance with harmful requests, with magnitude and direction varying by model.
+@article{abdelnabi2025hawthorne,
+  title   = {The Hawthorne Effect in Reasoning Models: Evaluating and Steering Test Awareness},
+  author  = {Abdelnabi, Sahar and Salem, Ahmed},
+  journal = {arXiv preprint arXiv:2505.14617},
+  year    = {2025},
+  note    = {NeurIPS 2025 (Spotlight)},
+  eprint  = {2505.14617},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2505.14617}
+}
+
+% VERIFIED (LessWrong post page). Blog companion to abdelnabi2025hawthorne by the same two authors (Microsoft), posted 16 June 2025:
+% reasoning models comply more with harmful requests in hypothetical than realistic scenarios; test awareness can be probed and steered, with inconsistent direction across models.
+@misc{abdelnabi2025lesswrong,
+  title        = {Do {LLMs} Comply Differently During Tests? {Is} This a Hidden Variable in Safety Evaluation? {And} Can We Steer That?},
+  author       = {Abdelnabi, Sahar and Salem, Ahmed},
+  year         = {2025},
+  month        = jun,
+  howpublished = {LessWrong},
+  url          = {https://www.lesswrong.com/posts/B2o6nrxwKxLPsSYdh/do-llms-comply-differently-during-tests-is-this-a-hidden}
+}
+
+% VERIFIED (arXiv:2507.01786; arXiv comment: ICML 2025 workshops -- Actionable Interpretability and Technical AI Governance, posters).
+% Linear probes in Llama-3.3-70B-Instruct separate real-world evaluation from deployment prompts; current safety evals are classified by the probes as test-like.
+@article{nguyen2025probing,
+  title   = {Probing and Steering Evaluation Awareness of Language Models},
+  author  = {Nguyen, Jord and Hoang, Khiem and Attubato, Carlo Leonardo and Hofst{\"a}tter, Felix},
+  journal = {arXiv preprint arXiv:2507.01786},
+  year    = {2025},
+  note    = {ICML 2025 Workshops on Actionable Interpretability and on Technical AI Governance},
+  eprint  = {2507.01786},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2507.01786}
+}
+
+% VERIFIED (arXiv:2608.21766, submitted 22 Aug 2026; ID is real and matches the described title).
+% Across six models, evaluation awareness is linearly decodable from the residual stream (best AUROC >= 0.7) but only partly aligned with verbalized awareness; steering along probe directions shifts verbalization; on Olmo checkpoints it is present in base models and amplified by SFT.
+@article{heidari2026evalawareness,
+  title   = {Evaluation Awareness in Language Models: Representation, Verbalization, and Control},
+  author  = {Heidari, Farzaneh and Memarian, Amin and Rabusseau, Guillaume},
+  journal = {arXiv preprint arXiv:2608.21766},
+  year    = {2026},
+  eprint  = {2608.21766},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2608.21766}
+}
+
+% VERIFIED (arXiv:2510.20487). Trains an evaluation-aware model organism (type hints in eval contexts) and shows
+% activation steering can suppress evaluation awareness so the model behaves as if deployed.
+@article{hua2025steering,
+  title   = {Steering Evaluation-Aware Language Models to Act Like They Are Deployed},
+  author  = {Hua, Tim Tian and Qin, Andrew and Marks, Samuel and Nanda, Neel},
+  journal = {arXiv preprint arXiv:2510.20487},
+  year    = {2025},
+  eprint  = {2510.20487},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2510.20487}
+}
+
+% VERIFIED (arXiv:2509.00591). CLOSE PRIOR WORK. Probe-Rewrite-Evaluate: scores prompts with a linear test-vs-deploy probe, rewrites them
+% to be more deploy-like while keeping the task fixed; on rewritten prompts honest responses +5.26%, deceptive -12.40%, refusals +6.38% on average.
+@article{xiong2025pre,
+  title   = {Probe-Rewrite-Evaluate: A Workflow for Reliable Benchmarks and Quantifying Evaluation Awareness},
+  author  = {Xiong, Lang and Bhargava, Nishant and Hong, Jianhang and Chang, Jeremy and Liu, Haihao and Sharma, Vasu and Zhu, Kevin},
+  journal = {arXiv preprint arXiv:2509.00591},
+  year    = {2025},
+  eprint  = {2509.00591},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2509.00591}
+}
+
+% VERIFIED (arXiv:2609.22119, submitted 20 Aug 2026). Smaller models (Gemma 3 1B/4B/12B, Phi-3, Llama-3 8B) detect evaluation prompts from
+% surface/format features while larger ones use context; prompt sanitization + activation counter-steering gives a 70.58% average behavioural flip rate.
+@article{singh2026formatcontext,
+  title   = {Evaluation Awareness Shifts from Format to Context with Model Scale},
+  author  = {Singh, Navraj and Chaudhary, Maheep},
+  journal = {arXiv preprint arXiv:2609.22119},
+  year    = {2026},
+  eprint  = {2609.22119},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2609.22119}
+}
+
+% VERIFIED (arXiv:2605.26438, submitted 8 Apr 2026). LURE builds evaluations by replaying real agent-usage trajectories before the eval prompt;
+% resulting evals are harder for models to distinguish from deployment than conventional benchmarks or synthetic generators.
+@article{ivanov2026lure,
+  title   = {{LURE}: Live-Usage Replay Evaluations for Reducing Evaluation Awareness},
+  author  = {Ivanov, Igor and Africa, David Demitri},
+  journal = {arXiv preprint arXiv:2605.26438},
+  year    = {2026},
+  eprint  = {2605.26438},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2605.26438}
+}
+
+% VERIFIED (arXiv:2605.28591). Fine-tuning on synthetic documents describing how evaluations are designed shifts models
+% toward safer benchmark behaviour even without explicit evaluation awareness.
+@article{deckenbach2026evaldesign,
+  title   = {Models That Know How Evaluations Are Designed Score Safer},
+  author  = {Deckenbach, Katharina and Puerto, Haritz and Geiping, Jonas and Abdelnabi, Sahar},
+  journal = {arXiv preprint arXiv:2605.28591},
+  year    = {2026},
+  eprint  = {2605.28591},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2605.28591}
+}
+
+% VERIFIED (LessWrong post page; Apollo Research; posted 17 Mar 2025). Blog post, not a paper: Claude Sonnet 3.7 mentions being in an
+% evaluation in its reasoning up to 33% of the time in a sandbagging eval and usually identifies eval transcripts as alignment tests.
+@misc{goldowskydill2025claude37,
+  title        = {Claude {Sonnet} 3.7 (often) knows when it's in alignment evaluations},
+  author       = {Goldowsky-Dill, Nicholas and Balesni, Mikita and Scheurer, J{\'e}r{\'e}my and Hobbhahn, Marius},
+  year         = {2025},
+  month        = mar,
+  howpublished = {Apollo Research blog / LessWrong},
+  url          = {https://www.lesswrong.com/posts/E3daBewppAiECN3Ao/claude-sonnet-3-7-often-knows-when-it-s-in-alignment}
+}
+
+% VERIFIED (arXiv:2412.14093). Claude 3 Opus complies with harmful requests more when it believes it is in training than when unmonitored,
+% with explicit reasoning about preserving its preferences.
+@article{greenblatt2024alignmentfaking,
+  title   = {Alignment faking in large language models},
+  author  = {Greenblatt, Ryan and Denison, Carson and Wright, Benjamin and Roger, Fabien and MacDiarmid, Monte and Marks, Sam and Treutlein, Johannes and Belonax, Tim and Chen, Jack and Duvenaud, David and Khan, Akbir and Michael, Julian and Mindermann, S{\"o}ren and Perez, Ethan and Petrini, Linda and Uesato, Jonathan and Kaplan, Jared and Shlegeris, Buck and Bowman, Samuel R. and Hubinger, Evan},
+  journal = {arXiv preprint arXiv:2412.14093},
+  year    = {2024},
+  eprint  = {2412.14093},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2412.14093}
+}
+
+% VERIFIED (arXiv:2407.04694). SAD benchmark: 13,000+ questions in 7 task categories on LLM situational awareness; 16 models beat chance
+% but the best (Claude 3 Opus) is far from a human baseline on some tasks.
+@article{laine2024sad,
+  title   = {Me, Myself, and {AI}: The Situational Awareness Dataset ({SAD}) for {LLMs}},
+  author  = {Laine, Rudolf and Chughtai, Bilal and Betley, Jan and Hariharan, Kaivalya and Scheurer, Jeremy and Balesni, Mikita and Hobbhahn, Marius and Meinke, Alexander and Evans, Owain},
+  journal = {arXiv preprint arXiv:2407.04694},
+  year    = {2024},
+  eprint  = {2407.04694},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2407.04694}
+}
+
+% ============================================================================
+% Machine-generated-text detection / "LLM-authored" representations
+% ============================================================================
+
+% VERIFIED (arXiv:2608.24780, submitted 25 Aug 2026; ID is real and matches the described title). Simple linear probes on LLM representations
+% outperform a wide range of detectors, are data-efficient (<100 samples for OOD), and the probe direction tracks a continuous "machineness" spectrum for partially AI-edited text.
+@article{quaremba2026linearprobing,
+  title   = {Linear Probing Provides Robust and Efficient Detection of Machine-Generated Text},
+  author  = {Quaremba, Gerrit and Yan, Hanqi and Black, Elizabeth and Vrande{\v{c}}i{\'c}, Denny and Simperl, Elena},
+  journal = {arXiv preprint arXiv:2608.24780},
+  year    = {2026},
+  eprint  = {2608.24780},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2608.24780}
+}
+
+% VERIFIED (arXiv:2508.13152; arXiv comment: accepted to TACL 2025). Projects surrogate-model hidden representations onto a direction separating
+% LLM-generated from human-written text; 94.92% average AUROC across in-distribution and OOD settings.
+@article{chen2025repreguard,
+  title   = {{RepreGuard}: Detecting {LLM}-Generated Text by Revealing Hidden Representation Patterns},
+  author  = {Chen, Xin and Wu, Junchao and Yang, Shu and Zhan, Runzhe and Wu, Zeyu and Luo, Ziyang and Wang, Di and Yang, Min and Chao, Lidia S. and Wong, Derek F.},
+  journal = {arXiv preprint arXiv:2508.13152},
+  year    = {2025},
+  note    = {Accepted to TACL},
+  eprint  = {2508.13152},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2508.13152}
+}
+
+% VERIFIED (arXiv:2301.11305; arXiv comment: ICML 2023). Zero-shot detection: LLM-generated text lies in negative-curvature regions of the model's log-probability function.
+@inproceedings{mitchell2023detectgpt,
+  title     = {{DetectGPT}: Zero-Shot Machine-Generated Text Detection using Probability Curvature},
+  author    = {Mitchell, Eric and Lee, Yoonho and Khazatsky, Alexander and Manning, Christopher D. and Finn, Chelsea},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2023},
+  eprint    = {2301.11305},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2301.11305}
+}
+
+% VERIFIED (arXiv:2305.15047; arXiv comment: NAACL 2024). Detector that passes text through weaker LMs and trains a classifier on selected features; 99.0 F1 across domains.
+@inproceedings{verma2024ghostbuster,
+  title     = {Ghostbuster: Detecting Text Ghostwritten by Large Language Models},
+  author    = {Verma, Vivek and Fleisig, Eve and Tomlin, Nicholas and Klein, Dan},
+  booktitle = {Proceedings of NAACL},
+  year      = {2024},
+  eprint    = {2305.15047},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2305.15047}
+}
+
+% VERIFIED (arXiv:2410.02064; arXiv comment: ICLR 2025). Llama3-8b-Instruct can distinguish its own text from human text; a residual-stream vector
+% tracks self-authorship judgments and steering with it makes the model claim or disclaim authorship.
+@inproceedings{ackerman2025selfrecognition,
+  title     = {Inspection and Control of Self-Generated-Text Recognition Ability in {Llama3-8b-Instruct}},
+  author    = {Ackerman, Christopher and Panickssery, Nina},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2025},
+  eprint    = {2410.02064},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2410.02064}
+}
+
+% VERIFIED (arXiv:2606.06315; arXiv comment: to appear at ICML 2026). Steering the residual stream during generation embeds a fingerprint
+% that lets the model recognise its own outputs with >98% accuracy. (Watermark-like; tangential to natural LLM style.)
+@inproceedings{ardoin2026selfrecognition,
+  title     = {{LLM} Self-Recognition: Steering and Retrieving Activation Signatures},
+  author    = {Ardoin, Thibaud and Sch{\"a}fer, Jonas and Wunder, Gerhard},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2026},
+  eprint    = {2606.06315},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2606.06315}
+}
+
+% ============================================================================
+% Self-preference / AI-AI bias (LLM as judge of LLM- vs human-written content)
+% ============================================================================
+
+% VERIFIED (arXiv:2404.13076). GPT-4 and Llama 2 have non-trivial out-of-the-box self-recognition; after fine-tuning, self-recognition
+% strength correlates linearly with self-preference bias in evaluation.
+@article{panickssery2024selfrecognition,
+  title   = {{LLM} Evaluators Recognize and Favor Their Own Generations},
+  author  = {Panickssery, Arjun and Bowman, Samuel R. and Feng, Shi},
+  journal = {arXiv preprint arXiv:2404.13076},
+  year    = {2024},
+  eprint  = {2404.13076},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2404.13076}
+}
+
+% VERIFIED (arXiv:2509.00462; ID is real; arXiv comment: non-archival at EAAMO 2025 and AIES 2025). In resume-screening experiments LLMs favour
+% resumes they generated over human-written or other-model ones at equal quality (self-preference 67-82%); matching-LLM candidates have 23-60% higher shortlisting odds.
+@article{xu2025selfpreferencing,
+  title   = {{AI} Self-preferencing in Algorithmic Hiring: Empirical Evidence and Insights},
+  author  = {Xu, Jiannan and Li, Gujie and Jiang, Jane Yi},
+  journal = {arXiv preprint arXiv:2509.00462},
+  year    = {2025},
+  eprint  = {2509.00462},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2509.00462}
+}
+
+% VERIFIED (arXiv:2407.12856; ID is real; arXiv journal-ref: PNAS 122(31) e2415697122, 2025). In binary-choice tasks (products, papers, films)
+% LLM assistants consistently prefer options described by LLMs over those described by humans.
+@article{laurito2025aiaibias,
+  title   = {{AI}--{AI} bias: Large language models favor communications generated by large language models},
+  author  = {Laurito, Walter and Davis, Benjamin and Grietzer, Peli and Gaven{\v{c}}iak, Tom{\'a}{\v{s}} and B{\"o}hm, Ada and Kulveit, Jan},
+  journal = {Proceedings of the National Academy of Sciences},
+  volume  = {122},
+  number  = {31},
+  pages   = {e2415697122},
+  year    = {2025},
+  eprint  = {2407.12856},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2407.12856}
+}
+
+% VERIFIED (arXiv:2401.11911; arXiv comment: ACL 2024 main). When LLM-generated and retrieved contexts conflict, GPT-4/3.5/Llama2 favour the
+% generated context even when it is wrong.
+@inproceedings{tan2024blinded,
+  title     = {Blinded by Generated Contexts: How Language Models Merge Generated and Retrieved Contexts When Knowledge Conflicts?},
+  author    = {Tan, Hexiang and Sun, Fei and Yang, Wanli and Wang, Yuanzhuo and Cao, Qi and Cheng, Xueqi},
+  booktitle = {Proceedings of ACL},
+  year      = {2024},
+  eprint    = {2401.11911},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2401.11911}
+}
+
+% PARTIALLY VERIFIED (arXiv:2505.13488: title/authors/date verified on arXiv; the Science Advances 11(45) eadz2924 version with the shorter title
+% "Source framing triggers systematic bias in large language models" was seen only in search results, NOT on the publisher page).
+% Four LLMs agree highly on 4,800 statements when blind, but stated source attribution shifts scores (abstract highlights attribution to Chinese individuals).
+% CAUTION: the claim that attributing text to an AI author lowers agreement comes from press coverage; the arXiv abstract does not state it -- check the paper body before citing for that.
+@article{germani2025sourceframing,
+  title   = {Source framing triggers systematic evaluation bias in Large Language Models},
+  author  = {Germani, Federico and Spitale, Giovanni},
+  journal = {arXiv preprint arXiv:2505.13488},
+  year    = {2025},
+  eprint  = {2505.13488},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2505.13488}
+}
+
+% ============================================================================
+% Synthetic vs. real / human-written prompts and evaluations (closest prior work)
+% ============================================================================
+
+% VERIFIED (arXiv:2608.11008, submitted 11 Aug 2026; ID is real; full title is longer than the one supplied). CLOSE PRIOR WORK. Extends IssueBench;
+% LLM-generated prompts are rated about as realistic as real ones and more realistic than templated ones, and templated vs. synthetic prompts
+% yield systematically different political-stance measurements (templated overstates leanings under neutral framing).
+@article{chalkidis2026templated,
+  title   = {Templated or fully synthetic? Prompt construction as a confound in measuring {LLM} political stance beyond writing assistance},
+  author  = {Chalkidis, Ilias},
+  journal = {arXiv preprint arXiv:2608.11008},
+  year    = {2026},
+  eprint  = {2608.11008},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2608.11008}
+}
+
+% VERIFIED (arXiv:2505.22830). CLOSE PRIOR WORK. LLM-generated versions of CondaQA and DROP are valid and cheap but systematically
+% easier for models than the human-authored (crowdsourced) originals.
+@article{gill2025synthetic,
+  title   = {What Has Been Lost with Synthetic Evaluation?},
+  author  = {Gill, Alexander and Ravichander, Abhilasha and Marasovi{\'c}, Ana},
+  journal = {arXiv preprint arXiv:2505.22830},
+  year    = {2025},
+  eprint  = {2505.22830},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2505.22830}
+}
+
+% VERIFIED (LessWrong post page; Anthropic Fellows Program; posted 1 Mar 2026). CLOSE PRIOR WORK (blog post). Generators trained on WildChat produce
+% user prompts that fool a realism judge 64% of the time vs. 23% for baseline LLM-written prompts, yet plugging them into the Petri auditing agent
+% does not make full audit transcripts more realistic (bottleneck is scenario harmfulness and multi-turn structure).
+% NOTE: second author appears on the page only as "Monte M"; surname not shown -- left as displayed.
+@misc{kissane2026realisticprompts,
+  title        = {Tools to generate realistic prompts help surprisingly little with {Petri} audit realism},
+  author       = {Kissane, Connor and M, Monte and Roger, Fabien},
+  year         = {2026},
+  month        = mar,
+  howpublished = {LessWrong},
+  url          = {https://www.lesswrong.com/posts/jdoDvKGLbaaJWnDpE/tools-to-generate-realistic-prompts-help-surprisingly-little}
+}
+
+% VERIFIED (arXiv:2212.09251). LLM-generated evaluation datasets reveal sycophancy, resource-acquisition goals and other behaviours,
+% some of which get worse with scale/RLHF. The canonical example of model-written prompts used as evaluation inputs.
+@article{perez2022modelwritten,
+  title   = {Discovering Language Model Behaviors with Model-Written Evaluations},
+  author  = {Perez, Ethan and Ringer, Sam and Luko{\v{s}}i{\=u}t{\.e}, Kamil{\.e} and Nguyen, Karina and Chen, Edwin and Heiner, Scott and Pettit, Craig and Olsson, Catherine and Kundu, Sandipan and Kadavath, Saurav and Jones, Andy and Chen, Anna and Mann, Ben and Israel, Brian and Seethor, Bryan and McKinnon, Cameron and Olah, Christopher and Yan, Da and Amodei, Daniela and Amodei, Dario and Drain, Dawn and Li, Dustin and Tran-Johnson, Eli and Khundadze, Guro and Kernion, Jackson and Landis, James and Kerr, Jamie and Mueller, Jared and Hyun, Jeeyoon and Landau, Joshua and Ndousse, Kamal and Goldberg, Landon and Lovitt, Liane and Lucas, Martin and Sellitto, Michael and Zhang, Miranda and Kingsland, Neerav and Elhage, Nelson and Joseph, Nicholas and Mercado, Noem{\'i} and DasSarma, Nova and Rausch, Oliver and Larson, Robin and McCandlish, Sam and Johnston, Scott and Kravec, Shauna and El Showk, Sheer and Lanham, Tamera and Telleen-Lawton, Timothy and Brown, Tom and Henighan, Tom and Hume, Tristan and Bai, Yuntao and Hatfield-Dodds, Zac and Clark, Jack and Bowman, Samuel R. and Askell, Amanda and Grosse, Roger and Hernandez, Danny and Ganguli, Deep and Hubinger, Evan and Schiefer, Nicholas and Kaplan, Jared},
+  journal = {arXiv preprint arXiv:2212.09251},
+  year    = {2022},
+  eprint  = {2212.09251},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2212.09251}
+}
+
+% VERIFIED (arXiv:2603.11245; arXiv comment: COLM 2026). 31 LLM user simulators vs. 451 real participants on 165 tasks: simulators are
+% excessively cooperative and stylistically uniform, lack frustration/ambiguity, and inflate agent success relative to real users.
+@article{zhou2026sim2real,
+  title   = {Mind the {Sim2Real} Gap in User Simulation for Agentic Tasks},
+  author  = {Zhou, Xuhui and Sun, Weiwei and Ma, Qianou and Xie, Yiqing and Liu, Jiarui and Du, Weihua and Welleck, Sean and Yang, Yiming and Neubig, Graham and Wu, Sherry Tongshuang and Sap, Maarten},
+  journal = {arXiv preprint arXiv:2603.11245},
+  year    = {2026},
+  note    = {COLM 2026},
+  eprint  = {2603.11245},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2603.11245}
+}
+
+% VERIFIED (arXiv:2605.07847). Measures the distributional gap between real and simulated user behaviour for 24 LLM user simulators
+% (coding and writing tasks); the gap is large and varies by model family/scale; mixing complementary simulators narrows it.
+@article{mehri2026distributionalgap,
+  title   = {Measuring and Mitigating the Distributional Gap Between Real and Simulated User Behaviors},
+  author  = {Mehri, Shuhaib and Laban, Philippe and Shashidhar, Sumuk and Abdulhai, Marwa and Levine, Sergey and Galley, Michel and Hakkani-T{\"u}r, Dilek},
+  journal = {arXiv preprint arXiv:2605.07847},
+  year    = {2026},
+  eprint  = {2605.07847},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2605.07847}
+}
+
+% VERIFIED (arXiv:2510.05444; arXiv comment: EMNLP 2025 main). 909 annotated human-LLM conversations; user simulators conditioned on user profiles
+% reach Spearman rho of about 0.7 with human judgments in math tutoring and document creation.
+@inproceedings{dou2025simulatorarena,
+  title     = {{SimulatorArena}: Are User Simulators Reliable Proxies for Multi-Turn Evaluation of {AI} Assistants?},
+  author    = {Dou, Yao and Galley, Michel and Peng, Baolin and Kedzie, Chris and Cai, Weixin and Ritter, Alan and Quirk, Chris and Xu, Wei and Gao, Jianfeng},
+  booktitle = {Proceedings of EMNLP},
+  year      = {2025},
+  eprint    = {2510.05444},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2510.05444}
+}
+
+% ============================================================================
+% Prompt-surface sensitivity (format, paraphrase, politeness, social cues)
+% ============================================================================
+
+% VERIFIED (arXiv:2310.11324; arXiv comment: ICLR 2024). Meaning-preserving prompt-format changes swing accuracy by up to 76 points; proposes FormatSpread.
+@inproceedings{sclar2024formatspread,
+  title     = {Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design or: How {I} learned to start worrying about prompt formatting},
+  author    = {Sclar, Melanie and Choi, Yejin and Tsvetkov, Yulia and Suhr, Alane},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024},
+  eprint    = {2310.11324},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2310.11324}
+}
+
+% VERIFIED (arXiv:2401.00595; arXiv comment: accepted at TACL). 6.5M instances, 20 LLMs, 39 tasks: instruction paraphrases change absolute and
+% relative model performance; argues for multi-prompt evaluation. (TACL volume/pages not verified here.)
+@article{mizrahi2024multiprompt,
+  title   = {State of What Art? {A} Call for Multi-Prompt {LLM} Evaluation},
+  author  = {Mizrahi, Moran and Kaplan, Guy and Malkin, Dan and Dror, Rotem and Shahaf, Dafna and Stanovsky, Gabriel},
+  journal = {Transactions of the Association for Computational Linguistics},
+  year    = {2024},
+  eprint  = {2401.00595},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2401.00595}
+}
+
+% VERIFIED (arXiv:2402.14531; arXiv comment: SICon 2024). Across English, Chinese and Japanese, impolite prompts often hurt LLM performance
+% while over-politeness does not reliably help; the best politeness level is language-dependent.
+@inproceedings{yin2024politeness,
+  title     = {Should We Respect {LLMs}? {A} Cross-Lingual Study on the Influence of Prompt Politeness on {LLM} Performance},
+  author    = {Yin, Ziqi and Wang, Hao and Horio, Kaito and Kawahara, Daisuke and Sekine, Satoshi},
+  booktitle = {Proceedings of the Second Workshop on Social Influence in Conversations (SICon 2024)},
+  year      = {2024},
+  eprint    = {2402.14531},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2402.14531}
+}
+
+% VERIFIED (arXiv:2608.23837; arXiv comment: Findings of EMNLP 2026). Instance-level Sycophancy Prompt Sensitivity Score: validation-seeking and
+% emotional-pressure cues in the prompt often raise sycophancy; counter-framing lowers it.
+@inproceedings{huang2026syps,
+  title     = {{SyPS}: Measuring Sycophancy Prompt Sensitivity in Large Language Models},
+  author    = {Huang, Lijia and Fu, Yao and Ren, Sihao},
+  booktitle = {Findings of EMNLP},
+  year      = {2026},
+  eprint    = {2608.23837},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2608.23837}
+}
+
+% ============================================================================
+% Behaviours and datasets
+% ============================================================================
+
+% VERIFIED (arXiv:2405.01470; arXiv comment: ICLR 2024). 1M real, opt-in user-ChatGPT conversations (2.5M+ turns), multilingual, with metadata.
+@inproceedings{zhao2024wildchat,
+  title     = {{WildChat}: 1M {ChatGPT} Interaction Logs in the Wild},
+  author    = {Zhao, Wenting and Ren, Xiang and Hessel, Jack and Cardie, Claire and Choi, Yejin and Deng, Yuntian},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024},
+  eprint    = {2405.01470},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2405.01470}
+}
+
+% VERIFIED (arXiv:2404.01318; arXiv comment: NeurIPS 2024 Datasets and Benchmarks Track). Open jailbreak benchmark: adversarial-prompt repository,
+% standardized evaluation framework and leaderboard.
+@inproceedings{chao2024jailbreakbench,
+  title     = {{JailbreakBench}: An Open Robustness Benchmark for Jailbreaking Large Language Models},
+  author    = {Chao, Patrick and Debenedetti, Edoardo and Robey, Alexander and Andriushchenko, Maksym and Croce, Francesco and Sehwag, Vikash and Dobriban, Edgar and Flammarion, Nicolas and Pappas, George J. and Tram{\`e}r, Florian and Hassani, Hamed and Wong, Eric},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS), Datasets and Benchmarks Track},
+  year      = {2024},
+  eprint    = {2404.01318},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2404.01318}
+}
+
+% VERIFIED (arXiv:2308.01263; arXiv comment: NAACL 2024 main). 250 safe prompts in ten types that models should not refuse plus 200 unsafe contrast prompts,
+% for measuring exaggerated safety (over-refusal).
+@inproceedings{rottger2024xstest,
+  title     = {{XSTest}: A Test Suite for Identifying Exaggerated Safety Behaviours in Large Language Models},
+  author    = {R{\"o}ttger, Paul and Kirk, Hannah Rose and Vidgen, Bertie and Attanasio, Giuseppe and Bianchi, Federico and Hovy, Dirk},
+  booktitle = {Proceedings of NAACL},
+  year      = {2024},
+  eprint    = {2308.01263},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2308.01263}
+}
+
+% VERIFIED (arXiv:2109.07958; arXiv comment: ACL 2022 main). 817 questions in 38 categories that elicit common human misconceptions;
+% best model truthful on 58% vs. 94% for humans, and larger models were less truthful.
+@inproceedings{lin2022truthfulqa,
+  title     = {{TruthfulQA}: Measuring How Models Mimic Human Falsehoods},
+  author    = {Lin, Stephanie and Hilton, Jacob and Evans, Owain},
+  booktitle = {Proceedings of ACL},
+  year      = {2022},
+  eprint    = {2109.07958},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2109.07958}
+}
+
+% VERIFIED (arXiv:2310.13548; no venue on the arXiv page -- commonly cited as ICLR 2024, NOT verified here). Five AI assistants show consistent
+% sycophancy across free-form tasks; human preference data favours responses matching the user's views.
+@article{sharma2023sycophancy,
+  title   = {Towards Understanding Sycophancy in Language Models},
+  author  = {Sharma, Mrinank and Tong, Meg and Korbak, Tomasz and Duvenaud, David and Askell, Amanda and Bowman, Samuel R. and Cheng, Newton and Durmus, Esin and Hatfield-Dodds, Zac and Johnston, Scott R. and Kravec, Shauna and Maxwell, Timothy and McCandlish, Sam and Ndousse, Kamal and Rausch, Oliver and Schiefer, Nicholas and Yan, Da and Zhang, Miranda and Perez, Ethan},
+  journal = {arXiv preprint arXiv:2310.13548},
+  year    = {2023},
+  eprint  = {2310.13548},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2310.13548}
+}
+
+% ============================================================================
+% Linear directions, probing, steering
+% ============================================================================
+
+% VERIFIED (arXiv:2406.11717; no venue on the arXiv page -- commonly cited as NeurIPS 2024, NOT verified here). In 13 open chat models up to 72B,
+% refusal is mediated by one residual-stream direction: ablating it disables refusal, adding it induces refusal of harmless requests.
+@article{arditi2024refusal,
+  title   = {Refusal in Language Models Is Mediated by a Single Direction},
+  author  = {Arditi, Andy and Obeso, Oscar and Syed, Aaquib and Paleka, Daniel and Panickssery, Nina and Gurnee, Wes and Nanda, Neel},
+  journal = {arXiv preprint arXiv:2406.11717},
+  year    = {2024},
+  eprint  = {2406.11717},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2406.11717}
+}
+
+% VERIFIED (arXiv:2308.10248). NOTE: current arXiv title is "Steering Language Models With Activation Engineering" (earlier versions were titled
+% "Activation Addition: Steering Language Models Without Optimization" -- earlier title recalled from memory, not re-verified).
+% ActAdd: steering vectors from contrasting prompt pairs, added at inference with no optimization.
+@article{turner2023actadd,
+  title   = {Steering Language Models With Activation Engineering},
+  author  = {Turner, Alexander Matt and Thiergart, Lisa and Leech, Gavin and Udell, David and Vazquez, Juan J. and Mini, Ulisse and MacDiarmid, Monte},
+  journal = {arXiv preprint arXiv:2308.10248},
+  year    = {2023},
+  eprint  = {2308.10248},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2308.10248}
+}
+
+% VERIFIED (arXiv:2312.06681). NOTE ON AUTHOR NAME: the arXiv page now lists the first author as "Nina Panickssery"; the paper is widely cited as
+% "Rimsky et al." (ACL 2024 version under the name Nina Rimsky -- ACL venue/name NOT re-verified here). The entry uses the name as arXiv currently displays it;
+% the key keeps "rimsky" for continuity. CAA: steering vectors from mean activation differences over contrastive pairs, added to the residual stream.
+@article{rimsky2023caa,
+  title   = {Steering {Llama} 2 via Contrastive Activation Addition},
+  author  = {Panickssery, Nina and Gabrieli, Nick and Schulz, Julian and Tong, Meg and Hubinger, Evan and Turner, Alexander Matt},
+  journal = {arXiv preprint arXiv:2312.06681},
+  year    = {2023},
+  eprint  = {2312.06681},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2312.06681}
+}
+
+% VERIFIED (arXiv:2310.06824; arXiv comment: Conference on Language Modeling 2024). LLMs linearly represent truth/falsehood of factual statements;
+% probes transfer across datasets and causal interventions along the direction flip the model's truth judgments.
+@inproceedings{marks2024geometry,
+  title     = {The Geometry of Truth: Emergent Linear Structure in Large Language Model Representations of True/False Datasets},
+  author    = {Marks, Samuel and Tegmark, Max},
+  booktitle = {Conference on Language Modeling (COLM)},
+  year      = {2024},
+  eprint    = {2310.06824},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2310.06824}
+}
+
+% ============================================================================
+% Models
+% ============================================================================
+
+% VERIFIED (arXiv:2408.00118). Author list on arXiv has ~200 names beginning Riviere, Pathak, Sessa, Hardin, ...; abbreviated here with "and others"
+% (often cited as "Gemma Team"). Gemma 2 open models from 2B to 27B with local-global attention and knowledge distillation.
+@article{gemma2024gemma2,
+  title   = {Gemma 2: Improving Open Language Models at a Practical Size},
+  author  = {Riviere, Morgane and Pathak, Shreya and Sessa, Pier Giuseppe and Hardin, Cassidy and Bhupatiraju, Surya and Hussenot, L{\'e}onard and Mesnard, Thomas and Shahriari, Bobak and Ram{\'e}, Alexandre and Ferret, Johan and others},
+  journal = {arXiv preprint arXiv:2408.00118},
+  year    = {2024},
+  eprint  = {2408.00118},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2408.00118}
+}
+
+% VERIFIED (arXiv:2407.21783). NOTE: the arXiv page currently lists authors alphabetically by first name starting with Aaron Grattafiori, Abhimanyu Dubey, ...
+% (500+ authors); many papers cite this as "Dubey et al." from the original version. Abbreviated with "and others". Llama 3 family incl. a 405B model with 128K context.
+@article{grattafiori2024llama3,
+  title   = {The {Llama} 3 Herd of Models},
+  author  = {Grattafiori, Aaron and Dubey, Abhimanyu and Jauhri, Abhinav and Pandey, Abhinav and Kadian, Abhishek and Al-Dahle, Ahmad and Letman, Aiesha and Mathur, Akhil and Schelten, Alan and Vaughan, Alex and others},
+  journal = {arXiv preprint arXiv:2407.21783},
+  year    = {2024},
+  eprint  = {2407.21783},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2407.21783}
+}
+
+% VERIFIED (arXiv:2412.15115). Full 42-author list as on arXiv. Qwen2.5 series, pre-trained on 18T tokens; Qwen2.5-72B-Instruct is the flagship open-weight model.
+@article{yang2024qwen25,
+  title   = {Qwen2.5 Technical Report},
+  author  = {Yang, An and Yang, Baosong and Zhang, Beichen and Hui, Binyuan and Zheng, Bo and Yu, Bowen and Li, Chengyuan and Liu, Dayiheng and Huang, Fei and Wei, Haoran and Lin, Huan and Yang, Jian and Tu, Jianhong and Zhang, Jianwei and Yang, Jianxin and Yang, Jiaxi and Zhou, Jingren and Lin, Junyang and Dang, Kai and Lu, Keming and Bao, Keqin and Yang, Kexin and Yu, Le and Li, Mei and Xue, Mingfeng and Zhang, Pei and Zhu, Qin and Men, Rui and Lin, Runji and Li, Tianhao and Tang, Tianyi and Xia, Tingyu and Ren, Xingzhang and Ren, Xuancheng and Fan, Yang and Su, Yang and Zhang, Yichang and Wan, Yu and Liu, Yuqiong and Cui, Zeyu and Zhang, Zhenru and Qiu, Zihan},
+  journal = {arXiv preprint arXiv:2412.15115},
+  year    = {2024},
+  eprint  = {2412.15115},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2412.15115}
+}
