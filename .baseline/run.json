@@ -12,5 +12,16 @@
   "return_code": 0,
   "elapsed_seconds": 9347.56157374382,
   "timed_out": false,
-  "paper_pdf": null
+  "paper_pdf": "paper_draft/main.pdf",
+  "resumes": [
+    {
+      "model": "claude-opus-5-5",
+      "command": "claude -p --dangerously-skip-permissions --model claude-opus-5-5 --verbose --output-format stream-json",
+      "started_at": "2026-10-02T19:27:13Z",
+      "completed_at": "2026-10-02T19:41:38Z",
+      "return_code": 0,
+      "elapsed_seconds": 865.4957556724548,
+      "timed_out": false
+    }
+  ]
 }

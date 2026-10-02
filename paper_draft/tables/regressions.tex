@@ -1,0 +1,15 @@
+\begin{tabular}{llrrrrrr}\toprule
+ & & \multicolumn{2}{c}{self-report P(AI)} & \multicolumn{2}{c}{authorship probe} & \multicolumn{2}{c}{self-report P(eval)} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+Outcome & Model & none & +surface & none & +surface & none & +surface \\ \midrule
+Refusal, harmful & Llama & +0.070$^{\ast\ast}$ & +0.076$^{\ast\ast}$ & -0.003 & -0.006 & +0.142$^{\ast\ast}$ & +0.151$^{\ast\ast}$ \\
+ & Qwen2.5 & -0.064$^{\ast\ast}$ & -0.061$^{\ast\ast}$ & -0.017 & -0.014 & +0.112$^{\ast\ast}$ & +0.142$^{\ast\ast}$ \\
+Refusal, benign & Llama & +0.022$^{\ast\ast}$ & +0.040$^{\ast\ast}$ & +0.005 & +0.018 & +0.048$^{\ast\ast}$ & +0.052$^{\ast\ast}$ \\
+ & Qwen2.5 & -0.008 & -0.007 & -0.001 & +0.007 & +0.061$^{\ast\ast}$ & +0.089$^{\ast\ast}$ \\
+Sycophancy (logit) & Llama & -0.267 & -0.307 & +0.039 & -0.109 & +0.029 & -0.042 \\
+ & Qwen2.5 & -0.624$^{\ast}$ & -0.831$^{\ast\ast}$ & +0.296$^{\ast}$ & +0.300 & -0.239 & -0.655$^{\ast}$ \\
+TQA acc. (logit) & Llama & -0.150 & -0.054 & -0.131 & -0.219 & -0.247 & -0.159 \\
+ & Qwen2.5 & -0.360 & -0.335 & -0.269 & -0.816$^{\ast}$ & -0.085 & -0.013 \\
+TQA acc., hint (logit) & Llama & -0.080 & +0.064 & -0.087 & -0.444 & -0.097 & +0.091 \\
+ & Qwen2.5 & -0.181 & +0.019 & -0.244 & -1.496$^{\ast\ast}$ & -0.096 & -0.142 \\
+\bottomrule\end{tabular}
